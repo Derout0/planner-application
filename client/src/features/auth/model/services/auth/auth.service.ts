@@ -7,10 +7,11 @@ import {
 import { IAuthForm, IAuthResponse } from '../../types/auth.types'
 
 class AuthService {
-	private LOGIN_URL = '/auth/login'
-	private REGISTER_URL = '/auth/register'
-	private LOGOUT_URL = '/auth/logout'
-	private REFRESH_TOKENS_URL = '/auth/login/access-token'
+	private ROOT_URL = '/auth'
+	private LOGIN_URL = `${this.ROOT_URL}/login`
+	private REGISTER_URL = `${this.ROOT_URL}/register`
+	private LOGOUT_URL = `${this.ROOT_URL}/logout`
+	private REFRESH_TOKENS_URL = `${this.LOGIN_URL}/access-token`
 
 	async login(data: IAuthForm) {
 		const response = await $axiosBase.post<IAuthResponse>(this.LOGIN_URL, data)

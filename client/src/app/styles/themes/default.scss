@@ -1,0 +1,73 @@
+:root {
+  // Поверхность.
+  --surface-color: #f9faef;
+  --surface-color-dim: #dadbd0;
+  --surface-color-bright: #f9faef;
+  --surface-container-color-low: #f3f4e9;
+  --surface-container-color-lowest: #ffffff;
+  --surface-container-color: #eeefe3;
+  --surface-container-color-high: #e8e9de;
+  --surface-container-color-highest: #e2e3d8;
+
+  // Основные цвета над поверхностью.
+  --on-surface-color: #1a1c16;
+  --on-surface-color-variant: #44483d;
+
+  // Основные цвета.
+  --primary-color: #4c662b;
+  --on-primary-color: #ffffff;
+  --primary-container-color: #cdeda3;
+  --on-primary-container-color: #102000;
+
+  // Вторичные цвета. (менее заметные компоненты)
+  --secondary-color: #586249;
+  --on-secondary-color: #ffffff;
+  --secondary-container-color: #dce7c8;
+  --on-secondary-container-color: #151e0b;
+
+  // Третичные цвета. (акцентный промежуток между 1-ым и 2-ым цветом)
+  --tertiary-color: #386663;
+  --on-tertiary-color: #ffffff;
+  --tertiary-container-color: #bcece7;
+  --on-tertiary-container-color: #00201e;
+
+  // Ошибки.
+  --error-color: #ba1a1a;
+  --on-error-color: #ffffff;
+  --error-container-color: #ffdad6;
+  --on-error-container-color: #410002;
+
+  // Контур.
+  --outline-color: #75796c;
+  --outline-color-variant: #c5c8ba;
+
+  // Инвертированные цвета.
+  --surface-color-inverse: #2f312a;
+  --on-surface-color-inverse: #f1f2e6;
+
+  // Нейтральные
+  --neutral-color: #1D1B20;
+
+  // Тени (от 1 высоты до 5)
+  --base-shadow-1: 0 1px 3px 1px rgb(0 0 0 / 15%), 0 1px 2px 0 rgb(0 0 0 / 30%);
+  --base-shadow-2: 0 2px 6px 2px rgb(0 0 0 / 15%), 0 1px 2px 0 rgb(0 0 0 / 30%);
+  --base-shadow-3: 0 1px 3px 0 rgb(0 0 0 / 30%), 0 4px 8px 3px rgb(0 0 0 / 15%);
+  --base-shadow-4: 0 2px 3px 0 rgb(0 0 0 / 30%), 0 6px 10px 4px rgb(0 0 0 / 15%);
+  --base-shadow-5: 0 4px 4px 0 rgb(0 0 0 / 30%), 0 8px 12px 6px rgb(0 0 0 / 15%);
+
+  // Оверлей
+  --overlay-color: rgb(0 0 0 / 90%);
+
+  // Input
+  --filled-input-background-color: var(--surface-container-color-highest);
+  --filled-input-text-color: var(--on-surface-color);
+  --filled-input-label-color: var(--on-surface-color-variant);
+  --filled-input-border-color: var(--on-surface-color);
+
+  // _focus
+  --filled-input-label-color-focus: var(--primary-color);
+  --filled-input-border-color-focus: var(--primary-color);
+
+  // _hover
+  --filled-input-background-color-hovered: var(--surface-container-color-high);
+}

@@ -1,8 +1,10 @@
+import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
 import { Toaster } from 'sonner'
 
 import { TanStackQueryProvider } from '@/app/providers/tan-stack-query'
+import '@/app/styles/index.scss'
 import { WEBSITE_NAME } from '@/shared/constants/seo.constants'
 
 const zen = Noto_Sans({
@@ -28,13 +30,14 @@ export function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={zen.className}>
+			<body className={clsx(zen.className, 'App')}>
 				<TanStackQueryProvider>
 					{children}
 					<Toaster
 						theme={'dark'}
 						position={'bottom-right'}
 						duration={1500}
+						toastOptions={{ className: 'Toaster' }}
 					/>
 				</TanStackQueryProvider>
 			</body>

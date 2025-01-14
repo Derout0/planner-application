@@ -50,7 +50,7 @@ export class AuthService {
 	private getCookieOptions(expiresIn: Date): CookieOptions {
 		return {
 			httpOnly: true,
-			domain: process.env.DOMAIN,
+			domain: 'localhost',
 			expires: expiresIn,
 			secure: true,
 			sameSite: 'none'

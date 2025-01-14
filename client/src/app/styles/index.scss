@@ -1,0 +1,14 @@
+@use 'reset' as *;
+@use 'mixins/mixins' as *;
+@use 'themes/default' as *;
+@use 'variables/base' as *;
+@use 'variables/typography' as *;
+@use 'variables/sizes' as *;
+
+.App {
+  background-color: var(--surface-color);
+}
+
+.Toaster {
+  padding: var(--base-size-12);
+}
