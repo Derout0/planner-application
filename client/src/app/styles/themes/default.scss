@@ -15,14 +15,22 @@
 
   // Основные цвета.
   --primary-color: #4c662b;
+  --primary-color-hovered: #567330;
+  --primary-color-focused: #77699C;
+  --primary-color-pressed: #7965AF;
+  --primary-color-opacity-12: rgba(76, 102, 43, 0.12);
+
   --on-primary-color: #ffffff;
   --primary-container-color: #cdeda3;
+  --primary-container-color-hovered: #bfdc98;
   --on-primary-container-color: #102000;
 
   // Вторичные цвета. (менее заметные компоненты)
   --secondary-color: #586249;
+  --secondary-color-hovered: #667154;
   --on-secondary-color: #ffffff;
   --secondary-container-color: #dce7c8;
+  --secondary-container-color-hovered: #cad5b6;
   --on-secondary-container-color: #151e0b;
 
   // Третичные цвета. (акцентный промежуток между 1-ым и 2-ым цветом)
@@ -47,6 +55,12 @@
 
   // Нейтральные
   --neutral-color: #1D1B20;
+  --neutral-color-opacity-12: rgba(29, 27, 32, 0.12);
+  --neutral-color-opacity-38: rgba(29, 27, 32, 0.38);
+
+  // Disabled Color
+  --disabled-color: var(--neutral-color-opacity-12);
+  --on-disabled-color: var(--neutral-color-opacity-38);
 
   // Тени (от 1 высоты до 5)
   --base-shadow-1: 0 1px 3px 1px rgb(0 0 0 / 15%), 0 1px 2px 0 rgb(0 0 0 / 30%);

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 
+import { UserStatistics } from '@/features/user-statistics'
 import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants'
 
 export const metadata: Metadata = {
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 }
 
 export const DashboardPage = () => {
-	return <div>Dashboard</div>
+	return (
+		<div>
+			Dashboard
+			<UserStatistics />
+		</div>
+	)
 }

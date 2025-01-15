@@ -1,2 +1,2 @@
-export { userSerice } from './model/services/user/user.service'
-export type { IUser } from './model/types/user'
+export { userService } from './model/services/user/user.service'
+export type { IUser, IProfileResponse } from './model/types/user'

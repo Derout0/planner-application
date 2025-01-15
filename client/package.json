@@ -25,6 +25,7 @@
     "react-day-picker": "^9.5.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.83.1",
     "sonner": "^1.7.1"
   },
@@ -36,6 +37,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-transition-group": "^4.4.12",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "prettier": "^3.4.2",

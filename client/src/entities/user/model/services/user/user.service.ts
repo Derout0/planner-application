@@ -3,7 +3,7 @@ import { $axiosAuth } from '@/shared/api/interceptors'
 import { IProfileResponse, UserForm } from '../../types/user'
 
 class UserService {
-	private BASE_URL = '/user/profile'
+	private BASE_URL = '/user'
 
 	async getProfile() {
 		const response = await $axiosAuth.get<IProfileResponse>(this.BASE_URL)
@@ -16,4 +16,4 @@ class UserService {
 	}
 }
 
-export const userSerice = new UserService()
+export const userService = new UserService()

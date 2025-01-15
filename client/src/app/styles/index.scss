@@ -12,3 +12,26 @@
 .Toaster {
   padding: var(--base-size-12);
 }
+
+.Dashboard {
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.Main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.Page {
+  flex: 1 1 auto;
+  padding: var(--base-size-20);
+  background-color: var(--surface-container-color-lowest);
+  border-radius: var(--border-radius-m);
+}
+
+.Container {
+  max-width: var(--container-width);
+  height: 100%;
+  margin: 0 auto;
+}

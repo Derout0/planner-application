@@ -9,6 +9,7 @@ import { toast } from 'sonner'
 import cls from './auth-form.module.scss'
 import { authService } from '@/features/auth'
 import { AppRoutes } from '@/shared/config/pages-url.config'
+import { Button } from '@/shared/ui/Button/Button'
 import { Input } from '@/shared/ui/Input/Input'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import { Text } from '@/shared/ui/Text/Text'
@@ -46,6 +47,14 @@ export const AuthForm = () => {
 		onSuccess: onSuccessfulAuth
 	})
 
+	const onLogin = () => {
+		setIsLoginForm(true)
+	}
+
+	const onRegister = () => {
+		setIsLoginForm(false)
+	}
+
 	return (
 		<form
 			className={cls.AuthForm}
@@ -78,8 +87,20 @@ export const AuthForm = () => {
 					justify='center'
 					gap='20'
 				>
-					<button onClick={() => setIsLoginForm(true)}>Login</button>
-					<button onClick={() => setIsLoginForm(false)}>Register</button>
+					<Button
+						type='submit'
+						theme='filled'
+						onClick={onLogin}
+					>
+						Login
+					</Button>
+					<Button
+						type='submit'
+						theme='text'
+						onClick={onRegister}
+					>
+						Register
+					</Button>
 				</HStack>
 			</VStack>
 		</form>
