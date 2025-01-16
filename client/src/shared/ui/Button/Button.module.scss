@@ -145,6 +145,16 @@
       }
     }
 
+    &.error {
+      color: var(--error-color);
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: var(--error-color-opacity-12);
+        }
+      }
+    }
+
     // Disabled
     &.disabled {
       color: var(--on-disabled-color);

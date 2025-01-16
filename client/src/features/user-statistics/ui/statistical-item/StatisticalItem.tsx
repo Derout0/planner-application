@@ -17,10 +17,7 @@ export const StatisticalItem = (props: StatisticalItemProps) => {
 			align='center'
 		>
 			<Text.TitleH3 align='center'>{label}</Text.TitleH3>
-			<Text
-				sx={{ fontSize: 'headline-m', fontWeight: '600' }}
-				align='center'
-			>
+			<Text sx={{ fontSize: 'headline-m', fontWeight: '600' }} align='center'>
 				{value}
 			</Text>
 		</VStack>

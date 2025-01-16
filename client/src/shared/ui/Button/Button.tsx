@@ -14,7 +14,7 @@ type ButtonFilledColors =
 	| 'error'
 	| 'error-variant'
 type ButtonOutlinedColors = 'primary' | 'secondary' | 'error'
-type ButtonTextColors = 'primary'
+type ButtonTextColors = 'primary' | 'error'
 
 type ButtonColorsMap = {
 	filled: ButtonFilledColors
@@ -44,7 +44,8 @@ const rippleColorsMap: {
 		error: 'var(--on-secondary-container-color)'
 	},
 	text: {
-		primary: 'var(--primary-color)'
+		primary: 'var(--primary-color)',
+		error: 'var(--error-color)'
 	}
 }
 
@@ -90,12 +91,7 @@ export const Button = memo(
 		}
 
 		const component = (
-			<HStack
-				as='span'
-				align='center'
-				justify='center'
-				gap='8'
-			>
+			<HStack as='span' align='center' justify='center' gap='8'>
 				{children}
 				{loading && <span className={cls.loader} />}
 			</HStack>

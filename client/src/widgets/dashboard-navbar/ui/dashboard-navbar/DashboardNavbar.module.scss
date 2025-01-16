@@ -1,14 +1,5 @@
 .DashboardNavbar {
-  padding: var(--base-size-12) var(--base-size-20);
-}
-
-.avatar {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  flex: 0 0 2rem;
-  border-radius: var(--border-radius-full);
-  background-color: var(--primary-color);
+  justify-content: flex-end;
+  padding: var(--base-size-12) var(--base-size-20);
 }
