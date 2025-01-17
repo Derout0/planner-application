@@ -86,21 +86,16 @@ export const Input = memo(
 		const mods = {
 			[cls.disabled]: disabled,
 			[cls.focused]: isFocus,
-			[cls.hovered]: isHover
+			[cls.hovered]: isHover,
+			[cls['no-label']]: !label
 		}
 
 		const additional = [className, theme && cls[theme]]
 
 		return (
 			<div className={clsx(cls.Input, mods, additional)}>
-				<HStack
-					gap='8'
-					className={cls.fieldMain}
-				>
-					<div
-						ref={wrappedRef}
-						className={cls.inner}
-					>
+				<HStack gap='8' className={cls.fieldMain}>
+					<div ref={wrappedRef} className={cls.inner}>
 						<InputLabel label={label} />
 						<div className={cls.field}>
 							<input

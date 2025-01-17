@@ -12,11 +12,6 @@ export interface IProfileResponse {
 	}>
 }
 
-export type UserForm = Omit<IUser, 'id'> & { password: string }
-
-// Todo: move?
-export interface IPomodoroSettings {
-	workInterval?: number
-	breakInterval?: number
-	intervalsCount?: number
+export type UserForm = Omit<IUser, 'id'> & {
+	password?: string
 }

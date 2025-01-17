@@ -1,18 +1,12 @@
-import { Metadata } from 'next'
-
 import { UserStatistics } from '@/features/user-statistics'
-import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants'
-
-export const metadata: Metadata = {
-	title: 'Dashboard',
-	...NO_INDEX_PAGE
-}
+import { VStack } from '@/shared/ui/Stack'
+import { Text } from '@/shared/ui/Text/Text'
 
 export const DashboardPage = () => {
 	return (
-		<div>
-			Dashboard
+		<VStack gap='40'>
+			<Text.HeadlineH1>Dashboard</Text.HeadlineH1>
 			<UserStatistics />
-		</div>
+		</VStack>
 	)
 }

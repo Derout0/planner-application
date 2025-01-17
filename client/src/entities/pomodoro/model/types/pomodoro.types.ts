@@ -10,6 +10,12 @@ export interface IPomodoroSessionResponse extends IBaseEntity {
 	rounds?: IPomodoroRoundResponse[]
 }
 
+export interface PomodoroForm {
+	workInterval?: number
+	breakInterval?: number
+	intervalsCount?: number
+}
+
 export type PomodoroRoundState = Partial<
 	Omit<IPomodoroRoundResponse, 'id' | 'updatedAt' | 'createdAt'>
 >

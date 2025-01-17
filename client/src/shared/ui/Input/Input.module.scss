@@ -43,7 +43,6 @@
   transition: color, top, font-size, 0.2s ease 0s;
 }
 
-
 // Themes
 .filled {
   .fieldMain {
@@ -88,6 +87,16 @@
     left: 12px;
     color: var(--filled-input-label-color);
   }
+
+  // No Label
+  &:not(.no-label) {
+    .input {
+      &::placeholder {
+        opacity: 0;
+        transition: opacity .2s ease 0s;
+      }
+    }
+  }
 }
 
 // States
@@ -117,19 +126,22 @@
       }
     }
 
-    .input {
-      transform: translateY(4px);
+    &:not(.no-label) {
+      .input {
+        transform: translateY(4px);
 
-      &::placeholder {
-        opacity: 1;
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+
+      .label {
+        color: var(--filled-input-label-color-focus);
+        font-size: var(--font-size-label-medium);
+        top: calc(50% - 10px);
       }
     }
 
-    .label {
-      color: var(--filled-input-label-color-focus);
-      font-size: var(--font-size-label-medium);
-      top: calc(50% - 10px);
-    }
   }
 
   // Border Theme
@@ -149,3 +161,30 @@
   pointer-events: none;
   opacity: 0.7;
 }
+//
+//.no-label {
+//  &.filled {
+//    .fieldMain {
+//      background: var(--filled-input-background-color-hovered);
+//
+//      &::before {
+//        opacity: 1;
+//        transform: scaleX(1);
+//      }
+//    }
+//
+//    .input {
+//      transform: translateY(0);
+//
+//      &::placeholder {
+//        opacity: 1;
+//      }
+//    }
+//
+//    .label {
+//      color: var(--filled-input-label-color-focus);
+//      font-size: var(--font-size-label-medium);
+//      top: calc(50% - 10px);
+//    }
+//  }
+//}

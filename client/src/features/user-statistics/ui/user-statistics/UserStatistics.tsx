@@ -7,16 +7,13 @@ import { IProfileResponse } from '@/entities/user'
 import { useProfile } from '@/entities/user/lib/hooks/useProfile/useProfile'
 import { StatisticalItem } from '@/features/user-statistics/ui/statistical-item/StatisticalItem'
 import { Loader } from '@/shared/ui/Loader/Loader'
+import { VStack } from '@/shared/ui/Stack'
 import { Text } from '@/shared/ui/Text/Text'
 
 const Statistics = ({ data }: { data: IProfileResponse | undefined }) => {
 	if (data?.statistics.length) {
 		return data.statistics.map(({ label, value }) => (
-			<StatisticalItem
-				key={label}
-				label={label}
-				value={value}
-			/>
+			<StatisticalItem key={label} label={label} value={value} />
 		))
 	}
 
@@ -27,11 +24,11 @@ export const UserStatistics = memo(() => {
 	const { data, isLoading } = useProfile()
 
 	return (
-		<div className={''}>
-			<Text.HeadlineH3>User Statistics</Text.HeadlineH3>
+		<VStack gap='20'>
+			<Text.TitleH2>User Statistics</Text.TitleH2>
 			<div className={cls.statistics}>
 				{isLoading ? <Loader /> : <Statistics data={data} />}
 			</div>
-		</div>
+		</VStack>
 	)
 })
