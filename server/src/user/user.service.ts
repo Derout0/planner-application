@@ -1,17 +1,19 @@
 import { Injectable } from '@nestjs/common'
 import { User } from '@prisma/client'
+import { hash } from 'argon2'
+import { startOfDay, subDays } from 'date-fns'
 import { PrismaService } from 'src/prisma.service'
 import { AuthDto } from 'src/auth/dto/auth.dto'
-import { hash } from 'argon2'
 import { UserDTO } from 'src/user/dto/user.dto'
 import { TasksService } from 'src/tasks/tasks.service'
-import { startOfDay, subDays } from 'date-fns'
+import { PomodoroSettingsService } from 'src/pomodoro-settings/pomodoro-settings.service'
 
 @Injectable()
 export class UserService {
 	constructor(
 		private prisma: PrismaService,
-		private tasks: TasksService
+		private tasks: TasksService,
+		private pomodoroSettings: PomodoroSettingsService
 	) {}
 
 	async create(dto: AuthDto) {
@@ -21,9 +23,13 @@ export class UserService {
 			password: await hash(dto.password)
 		}
 
-		return this.prisma.user.create({
+		const createdUser = await this.prisma.user.create({
 			data: user
 		})
+
+		await this.pomodoroSettings.create(createdUser.id)
+
+		return createdUser
 	}
 
 	async update(id: string, dto: UserDTO) {
@@ -46,7 +52,7 @@ export class UserService {
 	getByID(id: string) {
 		return this.prisma.user.findUnique({
 			where: { id },
-			include: { tasks: true }
+			include: { tasks: true, userPomodoroSettings: true }
 		})
 	}
 
