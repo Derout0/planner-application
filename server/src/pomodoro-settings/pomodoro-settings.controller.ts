@@ -3,7 +3,7 @@ import {
 	Controller,
 	Get,
 	HttpCode,
-	Post,
+	Put,
 	UsePipes,
 	ValidationPipe
 } from '@nestjs/common'
@@ -26,7 +26,7 @@ export class PomodoroSettingsController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Post('update')
+	@Put('update')
 	@Auth()
 	async updateSettings(
 		@CurrentUser('id') id: string,
