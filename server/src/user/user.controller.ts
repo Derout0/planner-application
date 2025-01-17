@@ -3,7 +3,7 @@ import {
 	Controller,
 	Get,
 	HttpCode,
-	Post,
+	Put,
 	UsePipes,
 	ValidationPipe
 } from '@nestjs/common'
@@ -24,7 +24,7 @@ export class UserController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Post('update')
+	@Put('update')
 	@Auth()
 	async updateUser(@CurrentUser('id') id: string, @Body() dto: UserDTO) {
 		return this.userService.update(id, dto)
