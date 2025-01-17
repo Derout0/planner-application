@@ -1,6 +1,7 @@
 import {
 	Body,
 	Controller,
+	Get,
 	HttpCode,
 	Post,
 	UsePipes,
@@ -17,11 +18,17 @@ export class PomodoroSettingsController {
 		private readonly pomodoroSettingsService: PomodoroSettingsService
 	) {}
 
+	@Get('')
+	@Auth()
+	async userPomodoroSettings(@CurrentUser('id') id: string) {
+		return this.pomodoroSettingsService.getByUserID(id)
+	}
+
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Post('update')
 	@Auth()
-	async updateUser(
+	async updateSettings(
 		@CurrentUser('id') id: string,
 		@Body() dto: PomodoroSettingsDTO
 	) {

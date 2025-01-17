@@ -6,6 +6,12 @@ import { PomodoroSettingsDTO } from 'src/pomodoro-settings/dto/pomodoro-settings
 export class PomodoroSettingsService {
 	constructor(private prisma: PrismaService) {}
 
+	getByUserID(userId: string) {
+		return this.prisma.userPomodoroSettings.findFirst({
+			where: { userId }
+		})
+	}
+
 	async create(userId: string) {
 		const pomodoroSettings = {
 			userId,

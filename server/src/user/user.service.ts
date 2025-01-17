@@ -52,7 +52,7 @@ export class UserService {
 	getByID(id: string) {
 		return this.prisma.user.findUnique({
 			where: { id },
-			include: { tasks: true, userPomodoroSettings: true }
+			include: { tasks: true }
 		})
 	}
 
