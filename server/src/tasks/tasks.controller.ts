@@ -27,7 +27,7 @@ export class TasksController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Post('create')
+	@Post()
 	@Auth()
 	async create(@CurrentUser('id') userId: string, @Body() dto: TaskDTO) {
 		return this.tasksService.create(userId, dto)
