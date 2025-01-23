@@ -80,11 +80,7 @@ export const TaskRow = (props: TaskRowProps) => {
 					control={control}
 					register={register}
 				/>
-				<TaskColumnDatePicker
-					className={cls.column}
-					control={control}
-					register={register}
-				/>
+				<TaskColumnDatePicker className={cls.column} control={control} />
 				<TaskColumnSelect className={cls.column} control={control} />
 				<HStack className={cls.column}>
 					<IconButton
