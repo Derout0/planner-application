@@ -32,6 +32,7 @@
 
 .Container {
   max-width: var(--container-width);
+  padding: 0 var(--base-size-12);
   height: 100%;
   margin: 0 auto;
 }

@@ -1,7 +1,7 @@
 export class AppPaths {
-	ROOT = '/app'
-	AUTH = '/auth'
+	private ROOT = '/app'
 
+	AUTH = '/auth'
 	HOME = this.ROOT
 	TASKS = `${this.ROOT}/tasks`
 	HABITS = `${this.ROOT}/habits`

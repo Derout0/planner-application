@@ -1,5 +1,10 @@
 .DashboardNavbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: var(--base-size-12) var(--base-size-20);
+  border-bottom: var(--base-border-variant);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--base-size-12);
 }
