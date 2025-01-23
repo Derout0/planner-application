@@ -13,8 +13,12 @@ class TaskService {
 		return await $axiosAuth.post(this.BASE_URL, data)
 	}
 
-	async updateTask(id: string, data: TaskFormState) {
+	async updateTask(id: string | number, data: TaskFormState) {
 		return await $axiosAuth.put(`${this.BASE_URL}/${id}`, data)
+	}
+
+	async deleteTask(id: string | number) {
+		return await $axiosAuth.delete(`${this.BASE_URL}/${id}`)
 	}
 }
 

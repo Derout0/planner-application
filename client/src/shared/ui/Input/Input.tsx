@@ -42,7 +42,7 @@ export const Input = memo(
 	forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
 		const {
 			className,
-			theme = 'filled',
+			theme,
 			value,
 			label,
 			error,
