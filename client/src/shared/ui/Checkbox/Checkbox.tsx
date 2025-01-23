@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 
 import cls from './Checkbox.module.scss'
+import { Ripple } from '@/shared/ui/Ripple/Ripple'
 import { Text } from '@/shared/ui/Text/Text'
 
 interface CheckboxProps {
@@ -25,7 +26,7 @@ export const Checkbox = (props: CheckboxProps) => {
 
 	return (
 		<label className={clsx(cls.Checkbox, mods, [className])}>
-			<div className={cls.inner}>
+			<Ripple as='span' color='var(--primary-color)' className={cls.inner}>
 				<input
 					className={cls.input}
 					id={id}
@@ -35,7 +36,7 @@ export const Checkbox = (props: CheckboxProps) => {
 					onChange={onChangeHandler}
 				/>
 				<span className={cls.custom}></span>
-			</div>
+			</Ripple>
 			<Text.SPAN>{label}</Text.SPAN>
 		</label>
 	)

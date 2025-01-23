@@ -20,6 +20,44 @@ interface TaskBlockProps {
 	setItems: Dispatch<SetStateAction<ITaskResponse[]>>
 }
 
+const TaskRows = (props: Omit<TaskBlockProps, 'label'>) => {
+	const { items, value, setItems } = props
+
+	return (
+		<VStack className={cls.rows} gap='4'>
+			{filterTasks(items, value)?.map(item => {
+				return (
+					<TaskRow
+						key={item.id}
+						taskBlockId={value}
+						item={item}
+						setItems={setItems}
+					/>
+				)
+			})}
+		</VStack>
+	)
+}
+
+const TaskFooter = (props: Omit<TaskBlockProps, 'label'>) => {
+	const { items, value, setItems } = props
+
+	return (
+		<VStack className={cls.rows} gap='4'>
+			{value !== ColumnsIds.COMPLETED && !items?.some(item => !item.id) && (
+				<HStack justify='start'>
+					<TaskAddInput
+						setItems={setItems}
+						filterDate={
+							tasksFilters[value] ? tasksFilters[value].format() : undefined
+						}
+					/>
+				</HStack>
+			)}
+		</VStack>
+	)
+}
+
 export const TaskBlock = (props: TaskBlockProps) => {
 	const { value, label, items, setItems } = props
 	const { setNodeRef, isOver } = useDroppable({
@@ -41,28 +79,8 @@ export const TaskBlock = (props: TaskBlockProps) => {
 			>
 				{label}
 			</Text>
-			<VStack className={cls.rows} gap='4'>
-				{filterTasks(items, value)?.map(item => {
-					return (
-						<TaskRow
-							key={item.id}
-							taskBlockId={value}
-							item={item}
-							setItems={setItems}
-						/>
-					)
-				})}
-				{value !== ColumnsIds.COMPLETED && !items?.some(item => !item.id) && (
-					<HStack justify='start'>
-						<TaskAddInput
-							setItems={setItems}
-							filterDate={
-								tasksFilters[value] ? tasksFilters[value].format() : undefined
-							}
-						/>
-					</HStack>
-				)}
-			</VStack>
+			<TaskRows items={items} value={value} setItems={setItems} />
+			<TaskFooter items={items} value={value} setItems={setItems} />
 		</VStack>
 	)
 }

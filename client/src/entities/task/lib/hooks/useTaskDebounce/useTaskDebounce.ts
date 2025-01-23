@@ -1,4 +1,5 @@
-import { debounce } from 'next/dist/server/utils'
+import { debounce } from 'lodash'
+// Используем lodash для удобства
 import { useCallback, useEffect } from 'react'
 import { UseFormWatch } from 'react-hook-form'
 
@@ -19,15 +20,15 @@ export const useTaskDebounce = ({
 	const debounceCreateTask = useCallback(
 		debounce((formData: TaskFormState) => {
 			createTask(formData)
-		}, 400),
-		[]
+		}, 500),
+		[createTask]
 	)
 
 	const debounceUpdateTask = useCallback(
 		debounce((formData: TaskFormState) => {
 			updateTask({ id: itemId, data: formData })
-		}, 400),
-		[]
+		}, 500),
+		[updateTask, itemId]
 	)
 
 	useEffect(() => {
@@ -35,13 +36,17 @@ export const useTaskDebounce = ({
 			if (itemId) {
 				debounceUpdateTask({
 					...formData,
-					priority: formData.priority || undefined
+					priority: formData.priority || null
 				})
 			} else {
 				debounceCreateTask(formData)
 			}
 		})
 
-		return () => unsubscribe()
-	}, [watch, debounceCreateTask, debounceUpdateTask])
+		return () => {
+			debounceCreateTask.cancel()
+			debounceUpdateTask.cancel()
+			unsubscribe()
+		}
+	}, [watch, itemId, debounceCreateTask, debounceUpdateTask])
 }

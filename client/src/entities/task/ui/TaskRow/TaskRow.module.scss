@@ -24,26 +24,14 @@
   }
 }
 
-.select {
-  width: 100%;
-}
-
 .dragging {
   opacity: 0.5;
-}
-
-.input {
-  width: 100%;
-}
-
-.datepicker {
-  width: 100%;
 }
 
 .inner {
   display: grid;
   align-items: center;
-  grid-template-columns: 62px 1fr 240px 180px 62px;
+  grid-template-columns: var(--tasks-grid-template-columns);
 }
 
 .completed {

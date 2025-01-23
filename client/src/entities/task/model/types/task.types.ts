@@ -4,7 +4,7 @@ import { TaskPriority } from '../constants/task.constants'
 
 export interface ITaskResponse extends IBaseEntity {
 	name: string
-	priority?: TaskPriority
+	priority?: TaskPriority | null
 	isCompleted: boolean
 }
 

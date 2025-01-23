@@ -6,13 +6,3 @@
   border-bottom: var(--base-border-variant);
 }
 
-.header-col {
-  display: flex;
-  align-items: center;
-  align-self: stretch;
-  padding: var(--base-size-12);
-
-  &:not(:last-child) {
-    border-right: var(--base-border-variant);
-  }
-}
