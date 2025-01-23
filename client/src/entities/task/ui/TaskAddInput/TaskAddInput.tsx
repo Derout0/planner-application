@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { Dispatch, SetStateAction } from 'react'
 
 import { Button } from '@/shared/ui/Button/Button'

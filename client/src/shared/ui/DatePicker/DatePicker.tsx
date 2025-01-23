@@ -21,7 +21,6 @@ interface DatePickerProps {
 	className?: string
 	onChange: (value: string) => void
 	value: string
-	position?: 'left' | 'right'
 }
 
 const PreviousMonthButton = ({
@@ -45,7 +44,7 @@ const NextMonthButton = ({
 }
 
 export const DatePicker = (props: DatePickerProps) => {
-	const { className, onChange, value, position } = props
+	const { className, onChange, value } = props
 
 	const [selected, setSelected] = useState<Date | undefined>(
 		value ? new Date(value) : undefined

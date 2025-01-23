@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { taskService } from '@/entities/task'
-import { TaskFormState } from '@/entities/task/model/types/task.types'
 
 export const useDeleteTask = () => {
 	const queryClient = useQueryClient()

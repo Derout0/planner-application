@@ -17,21 +17,9 @@ import { TaskBlock } from '../../ui/TaskBlock/TaskBlock'
 export const Tasks = () => {
 	const { tasks, setTasks } = useTasks()
 	const { onDragEnd } = useTaskDnd()
-	const [activeTask, setActiveTask] = useState<
-		ITaskResponse | undefined | null
-	>(undefined)
-
-	const onDragStart = (event: DragStartEvent) => {
-		const task = event.active.data.current?.task
-		setActiveTask(task)
-	}
 
 	return (
-		<DndContext
-			onDragStart={onDragStart}
-			onDragEnd={onDragEnd}
-			collisionDetection={rectIntersection}
-		>
+		<DndContext onDragEnd={onDragEnd} collisionDetection={rectIntersection}>
 			<VStack gap='4' className={clsx(cls.Tasks)}>
 				<div className={cls.header}>
 					<Text className={cls['header-col']}></Text>

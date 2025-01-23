@@ -1,6 +1,6 @@
 import { useDroppable } from '@dnd-kit/core'
 import clsx from 'clsx'
-import { Dispatch, SetStateAction, useMemo } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
 import cls from './TaskBlock.module.scss'
 import { tasksFilters } from '@/entities/task/model/data/columns.data'
@@ -42,7 +42,7 @@ export const TaskBlock = (props: TaskBlockProps) => {
 				{label}
 			</Text>
 			<VStack className={cls.rows} gap='4'>
-				{filterTasks(items, value)?.map((item, index) => {
+				{filterTasks(items, value)?.map(item => {
 					return (
 						<TaskRow
 							key={item.id}
