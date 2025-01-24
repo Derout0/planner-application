@@ -1,10 +1,10 @@
 import clsx from 'clsx'
 
 import cls from './TasksBlocks.module.scss'
+import { TaskBlock } from '@/entities/task/ui/task-block/TaskBlock'
 
 import { useTasks } from '../../lib/hooks/useTasks/useTasks'
 import { tasksColumnsData } from '../../model/data/columns.data'
-import { TaskBlock } from '../../ui/TaskBlock/TaskBlock'
 
 export const TasksBlocks = () => {
 	const { tasks, setTasks } = useTasks()

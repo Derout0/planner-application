@@ -5,6 +5,9 @@ import { Dispatch, SetStateAction } from 'react'
 import { useForm } from 'react-hook-form'
 
 import cls from './TaskRow.module.scss'
+import { TaskColumnDatePicker } from '@/entities/task/ui/task-column-date-picker/TaskColumnDatePicker'
+import { TaskColumnName } from '@/entities/task/ui/task-column-name/TaskColumnName'
+import { TaskColumnSelect } from '@/entities/task/ui/task-column-select/TaskColumnSelect'
 import GripIcon from '@/shared/assets/icons/Grip.svg'
 import TrashIcon from '@/shared/assets/icons/Trash.svg'
 import { Icon } from '@/shared/ui/Icon/Icon'
@@ -15,9 +18,6 @@ import { useDeleteTask } from '../../lib/hooks/useDeleteTask/useDeleteTask'
 import { useTaskDebounce } from '../../lib/hooks/useTaskDebounce/useTaskDebounce'
 import { ColumnsIds } from '../../model/types/data.types'
 import { ITaskResponse, TaskFormState } from '../../model/types/task.types'
-import { TaskColumnDatePicker } from '../TaskColumnDatePicker/TaskColumnDatePicker'
-import { TaskColumnName } from '../TaskColumnName/TaskColumnName'
-import { TaskColumnSelect } from '../TaskColumnSelect/TaskColumnSelect'
 
 interface TaskRowProps {
 	item: ITaskResponse

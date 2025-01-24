@@ -2,9 +2,9 @@ import { useQuery } from '@tanstack/react-query'
 
 import { pomodoroService } from '../../../model/services/pomodoro/pomodoro.service'
 
-export function usePomodoroTimer() {
+export function usePomodoroSettings() {
 	const { data, isLoading, isSuccess } = useQuery({
-		queryKey: ['pomodoro-timer'],
+		queryKey: ['pomodoro-settings'],
 		queryFn: () => pomodoroService.getSettings()
 	})
 

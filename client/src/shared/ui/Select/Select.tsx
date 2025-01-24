@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { MouseEvent } from 'react'
 
 import cls from './Select.module.scss'
-import TrashIcon from '@/shared/assets/icons/Trash.svg'
+import XIcon from '@/shared/assets/icons/X.svg'
 import { useOutsideClick } from '@/shared/lib/hooks'
 import { Button } from '@/shared/ui/Button/Button'
 import { Icon } from '@/shared/ui/Icon/Icon'
@@ -67,7 +67,7 @@ export const Select = (props: SelectProps) => {
 				</HStack>
 				{value && (
 					<IconButton size='small' theme='standard' onClick={onClear}>
-						<Icon SVG={TrashIcon} />
+						<Icon SVG={XIcon} />
 					</IconButton>
 				)}
 			</HStack>

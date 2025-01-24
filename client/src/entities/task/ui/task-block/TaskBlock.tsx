@@ -4,8 +4,8 @@ import { Dispatch, SetStateAction } from 'react'
 
 import cls from './TaskBlock.module.scss'
 import { tasksFilters } from '@/entities/task/model/data/columns.data'
-import { TaskAddInput } from '@/entities/task/ui/TaskAddInput/TaskAddInput'
-import { TaskRow } from '@/entities/task/ui/TaskRow/TaskRow'
+import { TaskAddInput } from '@/entities/task/ui/task-add-input/TaskAddInput'
+import { TaskRow } from '@/entities/task/ui/task-row/TaskRow'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import { Text } from '@/shared/ui/Text/Text'
 

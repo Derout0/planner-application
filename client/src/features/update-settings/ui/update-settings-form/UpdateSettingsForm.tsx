@@ -47,6 +47,7 @@ export const UpdateSettingsForm = () => {
 					<Input
 						id='name'
 						label='Name'
+						theme='filled'
 						placeholder='Enter name'
 						value={nameValue}
 						{...register('name')}
@@ -54,6 +55,7 @@ export const UpdateSettingsForm = () => {
 					<Input
 						id='email'
 						label='Email'
+						theme='filled'
 						placeholder='Enter email'
 						value={emailValue}
 						{...register('email')}
@@ -61,6 +63,7 @@ export const UpdateSettingsForm = () => {
 					<Input
 						id='password'
 						type='password'
+						theme='filled'
 						placeholder='Enter new password'
 						autoComplete='off'
 						{...register('password')}
@@ -70,6 +73,7 @@ export const UpdateSettingsForm = () => {
 					<Input
 						id='work-interval'
 						type='number'
+						theme='filled'
 						label='Work Interval'
 						value={String(workIntervalValue)}
 						placeholder='Enter work interval'
@@ -79,6 +83,7 @@ export const UpdateSettingsForm = () => {
 						id='break-interval'
 						type='number'
 						label='Break Interval'
+						theme='filled'
 						value={String(breakIntervalValue)}
 						placeholder='Enter break interval'
 						{...register('breakInterval', { valueAsNumber: true })}
@@ -87,6 +92,7 @@ export const UpdateSettingsForm = () => {
 						id='intervals-count'
 						type='number'
 						label='Intervals Count'
+						theme='filled'
 						value={String(intervalsCountValue)}
 						placeholder='Enter intervals count'
 						autoComplete='off'
