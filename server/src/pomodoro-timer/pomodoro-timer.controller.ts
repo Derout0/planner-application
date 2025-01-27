@@ -41,7 +41,7 @@ export class PomodoroTimerController {
 	@Auth()
 	async update(
 		@CurrentUser('id') userId: string,
-		@Param() id: string,
+		@Param('id') id: string,
 		@Body() dto: PomodoroSessionDTO
 	) {
 		return this.pomodoroTimerService.update(userId, id, dto)
@@ -51,14 +51,17 @@ export class PomodoroTimerController {
 	@HttpCode(200)
 	@Put('round/:id')
 	@Auth()
-	async updateRound(@Param() id: string, @Body() dto: PomodoroRoundDTO) {
+	async updateRound(@Param('id') id: string, @Body() dto: PomodoroRoundDTO) {
 		return this.pomodoroTimerService.updateRound(id, dto)
 	}
 
 	@HttpCode(200)
 	@Delete(':id')
 	@Auth()
-	async deleteSession(@CurrentUser('id') userId: string, @Param() id: string) {
+	async deleteSession(
+		@Param('id') id: string,
+		@CurrentUser('id') userId: string
+	) {
 		return this.pomodoroTimerService.deleteSession(id, userId)
 	}
 }
