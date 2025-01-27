@@ -93,7 +93,6 @@ export class PomodoroTimerService {
 	}
 
 	async deleteSession(sessionId: string, userId: string) {
-		console.log(sessionId)
 		return this.prisma.pomodoroSession.delete({
 			where: {
 				id: sessionId,
