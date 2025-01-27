@@ -7,7 +7,7 @@ export interface IPomodoroRoundResponse extends IBaseEntity {
 
 export interface IPomodoroSessionResponse extends IBaseEntity {
 	isCompleted?: boolean
-	rounds?: IPomodoroRoundResponse[]
+	pomodoroRounds?: IPomodoroRoundResponse[]
 }
 
 export interface PomodoroForm {

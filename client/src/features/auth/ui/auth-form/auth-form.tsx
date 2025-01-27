@@ -56,17 +56,12 @@ export const AuthForm = () => {
 	}
 
 	return (
-		<form
-			className={cls.AuthForm}
-			onSubmit={handleSubmit(onSubmit)}
-		>
-			<VStack
-				className={cls.inner}
-				gap='28'
-			>
+		<form className={cls.AuthForm} onSubmit={handleSubmit(onSubmit)}>
+			<VStack className={cls.inner} gap='28'>
 				<Text.HeadlineH3>Auth</Text.HeadlineH3>
 				<VStack gap='20'>
 					<Input
+						theme='filled'
 						type='email'
 						value={emailValue}
 						label='Email'
@@ -75,6 +70,7 @@ export const AuthForm = () => {
 						{...register('email', { required: 'Email is required' })}
 					/>
 					<Input
+						theme='filled'
 						type='password'
 						value={passwordValue}
 						label='Password'
@@ -83,22 +79,11 @@ export const AuthForm = () => {
 						{...register('password', { required: 'Password is required' })}
 					/>
 				</VStack>
-				<HStack
-					justify='center'
-					gap='20'
-				>
-					<Button
-						type='submit'
-						theme='filled'
-						onClick={onLogin}
-					>
+				<HStack justify='center' gap='20'>
+					<Button type='submit' theme='filled' onClick={onLogin}>
 						Login
 					</Button>
-					<Button
-						type='submit'
-						theme='text'
-						onClick={onRegister}
-					>
+					<Button type='submit' theme='text' onClick={onRegister}>
 						Register
 					</Button>
 				</HStack>

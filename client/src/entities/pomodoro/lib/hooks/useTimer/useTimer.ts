@@ -19,29 +19,43 @@ export const useTimer = () => {
 
 		if (isRunning) {
 			interval = setInterval(() => {
-				setSecondsLeft(secondsLeft => secondsLeft - 1)
+				setSecondsLeft(prevSeconds => Math.max(prevSeconds - 1, 0))
 			}, 1000)
-		} else if (!isRunning && secondsLeft !== 0 && interval) {
+		} else if (!isRunning && interval) {
 			clearInterval(interval)
 		}
 
 		return () => {
 			interval && clearInterval(interval)
 		}
-	}, [isRunning, secondsLeft, workInterval, activeRound])
+	}, [isRunning])
 
 	useEffect(() => {
 		if (secondsLeft > 0) return
 
-		setIsBreakTime(!isBreakTime)
-		setSecondsLeft((isBreakTime ? workInterval : breakInterval) * 60)
-	}, [secondsLeft, isBreakTime, workInterval, breakInterval])
+		if (isBreakTime) {
+			setIsRunning(false)
+		} else {
+			setIsBreakTime(true)
+			setSecondsLeft(breakInterval * 60)
+			setIsRunning(true)
+		}
+	}, [secondsLeft, isBreakTime, breakInterval])
+
+	const resetTimer = () => {
+		setIsRunning(false)
+		setIsBreakTime(false)
+		setSecondsLeft(workInterval * 60)
+	}
 
 	return {
+		isRunning,
+		isBreakTime,
+		setSecondsLeft,
 		activeRound,
-		setActiveRound,
 		secondsLeft,
 		setIsRunning,
-		setSecondsLeft
+		resetTimer,
+		setActiveRound
 	}
 }

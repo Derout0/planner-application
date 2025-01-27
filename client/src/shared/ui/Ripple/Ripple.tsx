@@ -211,11 +211,7 @@ export const Ripple = forwardRef(
 				{...other}
 			>
 				{children}
-				<TransitionGroup
-					component='span'
-					enter
-					exit
-				>
+				<TransitionGroup className={cls.spans} component='span' enter exit>
 					{ripples}
 				</TransitionGroup>
 			</Component>

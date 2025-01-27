@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 
-import { usePomodoroSettings } from '@/entities/pomodoro'
-
+import { usePomodoroSettings } from '../../../lib/hooks/usePomodoroSettings/usePomodoroSettings'
 import { pomodoroService } from '../../../model/services/pomodoro/pomodoro.service'
 import { IPomodoroRoundResponse } from '../../../model/types/pomodoro.types'
 
@@ -29,7 +28,7 @@ export const useTodaySession = ({
 		queryFn: () => pomodoroService.getTodaySession()
 	})
 
-	const rounds = sessionResponse?.data.rounds
+	const rounds = sessionResponse?.data.pomodoroRounds
 
 	useEffect(() => {
 		if (isSuccess && rounds) {
@@ -37,10 +36,10 @@ export const useTodaySession = ({
 			setActiveRound(activeRound)
 
 			if (activeRound && activeRound.totalSeconds !== 0) {
-				setSecondsLeft(workInterval - activeRound.totalSeconds)
+				setSecondsLeft(activeRound.totalSeconds)
 			}
 		}
 	}, [isSuccess, rounds])
 
-	return { sessionResponse, isLoading, refetch, isSuccess }
+	return { sessionResponse, isLoading, refetch, isSuccess, workInterval }
 }

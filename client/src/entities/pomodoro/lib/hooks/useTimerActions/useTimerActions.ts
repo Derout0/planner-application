@@ -25,16 +25,14 @@ export const useTimerActions = ({
 	const workInterval = pomodoroSettings?.workInterval ?? 50
 
 	const pause = () => {
-		const totalSeconds = workInterval * 60 - secondsLeft
-
 		setIsRunning(false)
 
 		if (activeRound?.id) {
 			updateRound({
 				id: activeRound?.id,
 				data: {
-					totalSeconds,
-					isCompleted: Math.floor(totalSeconds * 60) >= workInterval
+					totalSeconds: secondsLeft,
+					isCompleted: Math.floor(secondsLeft / 60) >= workInterval
 				}
 			})
 		}

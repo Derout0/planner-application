@@ -1,3 +1,5 @@
+import { Pomodoro } from '@/entities/pomodoro'
+
 export const TimerPage = () => {
-	return <div>Timer Page</div>
+	return <Pomodoro />
 }
