@@ -80,6 +80,14 @@
   // Оверлей
   --overlay-color: rgb(0 0 0 / 90%);
 
+  // Time Blocking
+  --time-block-color-1: rgba(255, 0, 0, 0.24);
+  --time-block-color-2: rgba(255, 0, 221, 0.24);
+  --time-block-color-3: rgba(72, 0, 255, 0.24);
+  --time-block-color-4: rgba(0, 42, 255, 0.24);
+  --time-block-color-5: rgba(0, 255, 225, 0.24);
+  --time-block-color-6: rgba(17, 255, 0, 0.24);
+
   // Input
   --filled-input-background-color: var(--surface-container-color-highest);
   --filled-input-text-color: var(--on-surface-color);

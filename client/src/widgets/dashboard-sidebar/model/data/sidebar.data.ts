@@ -5,7 +5,7 @@ import TimeBlockingIcon from '@/shared/assets/icons/TimeBlocking.svg'
 import TimerIcon from '@/shared/assets/icons/Timer.svg'
 import { AppRoutes } from '@/shared/config/pages-url.config'
 
-import { DashboardSidebarItem } from '../model/types/sidebar.interface'
+import { DashboardSidebarItem } from '../types/sidebar.interface'
 
 export const DashboardSidebarNavigationData: DashboardSidebarItem[] = [
 	{

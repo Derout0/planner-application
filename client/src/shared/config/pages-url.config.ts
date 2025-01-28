@@ -6,7 +6,7 @@ export class AppPaths {
 	TASKS = `${this.ROOT}/tasks`
 	HABITS = `${this.ROOT}/habits`
 	TIMER = `${this.ROOT}/timer`
-	TIME_BLOCKING = `${this.ROOT}/time-blocking`
+	TIME_BLOCKING = `${this.ROOT}/time-block`
 	SETTINGS = `${this.ROOT}/settings`
 }
 

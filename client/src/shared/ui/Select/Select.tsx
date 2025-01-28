@@ -17,6 +17,7 @@ export interface SelectOption {
 
 interface SelectProps {
 	className?: string
+	label?: string
 	data: SelectOption[]
 	onChange: (value: string) => void
 	value: string
@@ -24,7 +25,7 @@ interface SelectProps {
 }
 
 export const Select = (props: SelectProps) => {
-	const { className, data, onChange, value, isColorSelect } = props
+	const { className, data, onChange, value, isColorSelect, label } = props
 
 	const { isShow, setIsShow, ref } = useOutsideClick<HTMLDivElement>(false)
 
@@ -62,7 +63,13 @@ export const Select = (props: SelectProps) => {
 								style={isColorSelect ? { backgroundColor: getColor() } : {}}
 							></span>
 						)}
-						{getLabel() ? <span>{getLabel()}</span> : <span>Priority</span>}
+						{getLabel() ? (
+							<span>{getLabel()}</span>
+						) : label ? (
+							<span>{label}</span>
+						) : (
+							<span>Select</span>
+						)}
 					</Button>
 				</HStack>
 				{value && (

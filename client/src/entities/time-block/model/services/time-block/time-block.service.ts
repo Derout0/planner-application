@@ -6,7 +6,7 @@ import {
 } from '../../types/time-block.types'
 
 class TimeBlockService {
-	private BASE_URL = '/user/time-blocks'
+	private BASE_URL = '/user/time-block'
 
 	async getTimeBlocks() {
 		return await $axiosAuth.get<ITimeBlockResponse[]>(this.BASE_URL)

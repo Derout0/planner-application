@@ -1,7 +1,7 @@
 import cls from './SidebarItems.module.scss'
 import { VStack } from '@/shared/ui/Stack'
 
-import { DashboardSidebarNavigationData } from '../../model/sidebar.data'
+import { DashboardSidebarNavigationData } from '../../model/data/sidebar.data'
 import { SidebarItem } from '../../ui/sidebar-item/SidebarItem'
 
 export const SidebarItems = () => {
