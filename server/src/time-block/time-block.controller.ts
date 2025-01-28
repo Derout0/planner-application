@@ -36,7 +36,7 @@ export class TimeBlockController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Post()
+	@Put()
 	@Auth()
 	async update(
 		@CurrentUser('id') userId: string,
